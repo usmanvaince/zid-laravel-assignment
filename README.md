@@ -28,12 +28,24 @@ statistic should be displayed.
 Please write your answers to following questions.
 
 > **Please briefly explain your implementation of the new feature**  
->  
-> _..._
+>  For the new feature, I created a new service called `ItemStatsService` and wrote all functions in it. I prefer doing all calculations at the DB level and just return the finalized value.
+>
+> ** For stats we have a new route, you need to hit that one `/items-stats`.
+> 
+>  **If you want to fetch these stats form the command you need to run following**
+> 1. For all stats:  `php artisan stats:items`.
+> 2. For Only Total Items: `php artisan stats:items total-items`
+> 3. For Only Average Item Price: `php artisan stats:items avg-item-price`
+> 4. For Website With Highest Total Price: `php artisan stats:items website-with-highest-total-price`
+> 5. For Current Month Items Total Price: `php artisan stats:items current-month-items-total-price`
+>
+> **Note:At the moment, the command would accept only one argument and if there is no argument then all stats would be returned**
+
 
 > **For the refactoring, would you change something else if you had more time?**  
->  
-> _..._
+>  I think I have done enough refactoring. I moved the validation in the `Form requests`. Instead of using custom serializers, I prefer to use Laravel Api resource. 
+> 
+> **However, If I got some more time, I would love to try to work with laravel collections. So get all items from the DB and perform other calculation on it at the laravel code level. Just for experiment would also love to use laravel lazy collection**.
 
 ## Running the project
 This project requires a database to run. For the server part, you can use `php artisan serve`

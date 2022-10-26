@@ -14,5 +14,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::apiResource('items',  Controllers\Item\ItemController::class);
+Route::apiResource('items',  Controllers\Item\ItemController::class)->except('destroy');
 Route::get('items-stats', [Controllers\Item\ItemStatsController::class, 'index']);
